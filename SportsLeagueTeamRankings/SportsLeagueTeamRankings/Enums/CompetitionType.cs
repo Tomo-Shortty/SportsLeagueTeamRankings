@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SportsLeagueTeamRankings.Models
+namespace SportsLeagueTeamRankings.Enums
 {
-    internal class Configuration
+    internal enum CompetitionType
     {
+        League,
+        Division,
+        Conference
     }
 }

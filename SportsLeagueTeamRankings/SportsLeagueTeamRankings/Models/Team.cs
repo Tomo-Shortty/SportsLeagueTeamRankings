@@ -9,6 +9,7 @@ namespace SportsLeagueTeamRankings.Models
     internal class Team
     {
         public string Name { get; set; }
-        public double Points { get; set; }
+        public double? Points { get; set; }
+        public int? Rank { get; set; }
     }
 }
