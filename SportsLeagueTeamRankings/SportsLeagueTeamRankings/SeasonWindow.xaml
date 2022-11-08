@@ -1,0 +1,19 @@
+﻿<Window x:Class="SportsLeagueTeamRankings.SeasonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportsLeagueTeamRankings"
+        mc:Ignorable="d"
+        Title="Seasons" Height="400" Width="200">
+    <Grid x:Name="ViewSeasonsBackgroundGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="CancelSeasonsButton" Content="Cancel" HorizontalAlignment="Left" Margin="130,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="60" IsCancel="True" Click="CancelSeasonsButton_Click"/>
+        <Button x:Name="SubmitSeasonsButton" Content="Submit" HorizontalAlignment="Left" Margin="65,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="60" IsDefault="True" Click="SubmitSeasonsButton_Click"/>
+        <Grid x:Name="ViewSeasonsGrid"/>
+
+    </Grid>
+</Window>

@@ -10,12 +10,24 @@
     <Compile Update="ConfigurationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SeasonWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TeamWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ConfigurationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SeasonWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TeamWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Configuration" Height="600" Width="500">
     <Grid x:Name="ConfigurationGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="*"/>
@@ -18,12 +22,54 @@
         <Label x:Name="LeagueSetupLabel" Content="League Setup" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="SeasonSetupLabel" Content="Season Setup" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="SetupLabel" Content="Setup" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="LeagueNameTextBox" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Name" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="LeagueSetupCompetitionTypeSelector" HorizontalAlignment="Left" Margin="130,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="LeagueNameTextBox" Margin="59,10,0,0" Grid.Row="1" TextWrapping="Wrap" Width="181" VerticalAlignment="Top" HorizontalAlignment="Left" TextChanged="LeagueNameTextBox_TextChanged"/>
+        <ComboBox x:Name="LeagueSetupCompetitionTypeSelector" HorizontalAlignment="Left" Margin="122,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <ComboBoxItem Content="League"/>
             <ComboBoxItem Content="Conference"/>
             <ComboBoxItem Content="Division"/>
         </ComboBox>
         <Label x:Name="LeagueSetupCompetitionTypeLabel" Content="Competition Type:" HorizontalAlignment="Left" Margin="10,35,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Number of teams:" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox x:Name="NumberOfTeamsTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="120,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NumberOfTeamsTextBox_TextChanged"/>
+        <Button x:Name="TeamsConfigurationButton" Grid.Column="1" Content="View Teams" HorizontalAlignment="Center" Margin="0,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="230" IsEnabled="False" Click="TeamsConfigurationButton_Click"/>
+        <Label Content="Number of seasons:" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+        <TextBox x:Name="NumberOfSeasonsTextBox" HorizontalAlignment="Left" Margin="130,0,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" TextChanged="NumberOfSeasonsTextBox_TextChanged"/>
+        <Button x:Name="SeasonsConfigurationButton" Grid.Column="1" Content="View Seasons" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="230" IsEnabled="False" Click="SeasonsConfigurationButton_Click"/>
+        <Label Content="Play Off Win:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Preliminary Final Appearance:" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Grand Final Appearance:" HorizontalAlignment="Left" Margin="10,72,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Premiership Win:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Back-To-Back Premiership Win:" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Wooden Spoon:" HorizontalAlignment="Left" Margin="10,72,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Points Difference Division:" HorizontalAlignment="Left" Margin="10,103,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Play Off Rank:" HorizontalAlignment="Left" Margin="10,103,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Include Secondary Play Off Rank:" HorizontalAlignment="Left" Margin="10,134,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Secondary Play Off Rank:" HorizontalAlignment="Left" Margin="10,134,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Take Average Score For Missing Years:" HorizontalAlignment="Left" Margin="10,165,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Excellent Score:" HorizontalAlignment="Left" Margin="10,165,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Good Score:" HorizontalAlignment="Left" Margin="10,196,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Average Score:" HorizontalAlignment="Left" Margin="10,196,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Content="Bad Score:" HorizontalAlignment="Left" Margin="10,227,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Terrible Score:" HorizontalAlignment="Left" Margin="10,227,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <CheckBox x:Name="TakeAverageScoreForMissingYearsCheckbox" Content="" HorizontalAlignment="Left" Margin="225,171,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <CheckBox x:Name="IncludeSecondaryPlayOffRankCheckbox" Content="" HorizontalAlignment="Left" Margin="225,139,0,0" Grid.Row="5" VerticalAlignment="Top" IsChecked="True" Checked="IncludeSecondaryPlayOffRankCheckbox_Checked"/>
+        <TextBox x:Name="BackToBackPremiershipWinTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,45,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="10"/>
+        <TextBox x:Name="PlayOffWinTextBox" HorizontalAlignment="Left" Margin="189,14,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="5"/>
+        <TextBox x:Name="PremiershipTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,14,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="10"/>
+        <TextBox x:Name="PreliminaryFinalAppearanceTextBox" HorizontalAlignment="Left" Margin="189,45,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="5"/>
+        <TextBox x:Name="WoodenSpoonTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,76,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="-10"/>
+        <TextBox x:Name="GrandFinalAppearanceTextBox" HorizontalAlignment="Left" Margin="189,76,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="5"/>
+        <TextBox x:Name="PlayOffRankTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,107,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="8"/>
+        <TextBox x:Name="PointsDifferenceDivisionTextBox" HorizontalAlignment="Left" Margin="189,107,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="10"/>
+        <TextBox x:Name="SecondaryPlayOffRankTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,137,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="4"/>
+        <TextBox x:Name="ExcellentScoreTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,169,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="400"/>
+        <TextBox x:Name="AverageScoreTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,200,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="200"/>
+        <TextBox x:Name="GoodScoreTextBox" HorizontalAlignment="Left" Margin="189,200,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="300"/>
+        <TextBox x:Name="TerribleScoreTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,231,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="0"/>
+        <TextBox x:Name="BadScoreTextBox" HorizontalAlignment="Left" Margin="189,231,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="100"/>
+        <Button x:Name="CancelConfigurationButton" Grid.Column="1" Content="Cancel" Margin="180,266,10,0" Grid.Row="5" VerticalAlignment="Top" Width="60" IsCancel="True" Click="CancelConfigurationButton_Click"/>
+        <Button x:Name="ResetConfigurationButton" Grid.Column="1" Content="Reset" Margin="115,266,75,0" Grid.Row="5" VerticalAlignment="Top" Click="ResetConfigurationButton_Click"/>
+        <Button x:Name="SubmitConfigurationButton" Grid.Column="1" Content="Submit" Margin="50,266,140,0" Grid.Row="5" VerticalAlignment="Top" Click="SubmitConfigurationButton_Click"/>
     </Grid>
 </Window>

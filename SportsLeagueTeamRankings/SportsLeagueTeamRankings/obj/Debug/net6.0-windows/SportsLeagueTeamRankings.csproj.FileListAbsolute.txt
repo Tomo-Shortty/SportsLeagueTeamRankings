@@ -21,3 +21,7 @@ C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTea
 C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\ref\SportsLeagueTeamRankings.dll
 C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\ConfigurationWindow.g.cs
 C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\ConfigurationWindow.baml
+C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\SeasonWindow.g.cs
+C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\TeamWindow.g.cs
+C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\SeasonWindow.baml
+C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\obj\Debug\net6.0-windows\TeamWindow.baml
