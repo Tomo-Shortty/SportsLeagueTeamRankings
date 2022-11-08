@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportsLeagueTeamRankings"
         mc:Ignorable="d"
-        Title="Sports League Team Rankings" Height="1000" Width="900">
-    <Grid>
-
+        Title="Sports League Team Rankings" Height="1000" Width="900" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid x:Name="MainWindowBackgroundGrid" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="9.5*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="MainWindowForegroundGrid" Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="8.5*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="LeagueLabel" Content="League Label" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <Label x:Name="CompetitionTypeInfoLabel" Content="Competition Type:" HorizontalAlignment="Left" Margin="28,94,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
+            <Label x:Name="CompetitionTypeLabel" Grid.Column="1" Content="Competition Type Label" HorizontalAlignment="Left" Margin="176,94,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
+            <Grid x:Name="StatsGridLayout" Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="6*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="ConfigurationLabel" Content="Configuration Label" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,-2,0" FontSize="24" FontWeight="Bold"/>
+                <Grid x:Name="StatsGrid" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Button x:Name="NewButton" Content="New" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" HorizontalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Right" Margin="0,0,10,0" Height="20" Width="60" Click="NewButton_Click"/>
     </Grid>
 </Window>

@@ -9,9 +9,13 @@ namespace SportsLeagueTeamRankings.Models
 {
     internal class Configuration
     {
+        public string Name { get; set; }
+        public League League { get; set; }
         public CompetitionType CompetitionType { get; set; }
         public int NumberOfTeams { get; set; }
+        public List<Team> Teams { get; set; }
         public int NumberOfSeasons { get; set; }
+        public List<Season> Seasons { get; set; }
         public double PlayOffWinPoints { get; set; }
         public double PreliminaryFinalAppearancePoints { get; set; }
         public double GrandFinalAppearancePoints { get; set; }

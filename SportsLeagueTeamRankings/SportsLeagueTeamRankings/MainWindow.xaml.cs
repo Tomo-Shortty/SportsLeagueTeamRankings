@@ -24,5 +24,11 @@ namespace SportsLeagueTeamRankings
         {
             InitializeComponent();
         }
+
+        private void NewButton_Click(object sender, RoutedEventArgs e)
+        {
+            ConfigurationWindow configurationWindow = new ConfigurationWindow();
+            configurationWindow.Show();
+        }
     }
 }

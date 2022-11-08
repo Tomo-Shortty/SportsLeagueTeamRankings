@@ -1,0 +1,29 @@
+﻿<Window x:Class="SportsLeagueTeamRankings.ConfigurationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportsLeagueTeamRankings"
+        mc:Ignorable="d"
+        Title="Configuration" Height="600" Width="500">
+    <Grid x:Name="ConfigurationGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LeagueSetupLabel" Content="League Setup" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="SeasonSetupLabel" Content="Season Setup" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="SetupLabel" Content="Setup" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="LeagueNameTextBox" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Name" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="LeagueSetupCompetitionTypeSelector" HorizontalAlignment="Left" Margin="130,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="League"/>
+            <ComboBoxItem Content="Conference"/>
+            <ComboBoxItem Content="Division"/>
+        </ComboBox>
+        <Label x:Name="LeagueSetupCompetitionTypeLabel" Content="Competition Type:" HorizontalAlignment="Left" Margin="10,35,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
