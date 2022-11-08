@@ -8,10 +8,7 @@ namespace SportsLeagueTeamRankings.Models
 {
     internal class Season
     {
-        public string? Name { get; set; }
-        public string? TeamName { get; set; }
-        public int Rank { get; set; }
-        public double LeaguePoints { get; set; }
-        public double PointsDifference { get; set; }
+        public string Name { get; set; }
+        public League League { get; set; }
     }
 }

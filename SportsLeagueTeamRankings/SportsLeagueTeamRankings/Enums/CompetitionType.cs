@@ -9,7 +9,7 @@ namespace SportsLeagueTeamRankings.Enums
     internal enum CompetitionType
     {
         League,
-        Division,
-        Conference
+        Conference,
+        Division
     }
 }
