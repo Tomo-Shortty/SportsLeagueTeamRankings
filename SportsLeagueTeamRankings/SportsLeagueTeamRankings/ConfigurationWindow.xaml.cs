@@ -1,4 +1,6 @@
 ﻿using SportsLeagueTeamRankings.Enums;
+using SportsLeagueTeamRankings.Models;
+using SportsLeagueTeamRankings.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +26,21 @@ namespace SportsLeagueTeamRankings
         private bool _leagueNameEntered = false;
         private bool _numberOfTeamsEntered = false;
         private bool _numberOfSeasonsEntered = false;
+        private List<string> _teams;
+        private List<string> _seasons;
+
+        public static ConfigurationWindow Instance;
 
         public ConfigurationWindow()
         {
             InitializeComponent();
+            _teams = new List<string>();
+            _seasons = new List<string>();
+            Instance = this;
         }
+
+        public List<string> Teams => _teams;
+        public List<string> Seasons => _seasons;
 
         private void LeagueNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -47,6 +59,22 @@ namespace SportsLeagueTeamRankings
                 {
                     TeamsConfigurationButton.IsEnabled = false;
                 }
+            }
+        }
+
+        private void LeagueSetupCompetitionTypeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LeagueSetupCompetitionTypeSelector.SelectedIndex == 2)
+            {
+                TeamsPerDivisionLabel.Visibility = Visibility.Visible;
+                TeamsPerDivisionTextBox.Visibility = Visibility.Visible;
+                TeamsPerDivisionTextBox.IsEnabled = true;
+            }
+            else
+            {
+                TeamsPerDivisionLabel.Visibility = Visibility.Collapsed;
+                TeamsPerDivisionTextBox.Visibility = Visibility.Collapsed;
+                TeamsPerDivisionTextBox.IsEnabled = false;
             }
         }
 
@@ -73,6 +101,8 @@ namespace SportsLeagueTeamRankings
         private void TeamsConfigurationButton_Click(object sender, RoutedEventArgs e)
         {
             TeamWindow teamWindow = new TeamWindow();
+            teamWindow.Title = LeagueNameTextBox.Text.Trim() + " Teams";
+            teamWindow.SetNumberOfRows(int.Parse(NumberOfTeamsTextBox.Text.Trim()));
             teamWindow.Show();
         }
 
@@ -103,7 +133,6 @@ namespace SportsLeagueTeamRankings
 
         private void IncludeSecondaryPlayOffRankCheckbox_Unchecked(object sender, RoutedEventArgs e)
         {
-            SecondaryPlayOffRankTextBox.Text = "";
             SecondaryPlayOffRankTextBox.IsEnabled = false;
         }
 
@@ -126,10 +155,13 @@ namespace SportsLeagueTeamRankings
         {
             LeagueNameTextBox.Text = "";
             LeagueSetupCompetitionTypeSelector.SelectedIndex = 0;
+            TeamsPerDivisionTextBox.Text = "";
             NumberOfTeamsTextBox.Text = "";
             TeamsConfigurationButton.IsEnabled = false;
             _leagueNameEntered = false;
             _numberOfTeamsEntered = false;
+            ListService.ClearList(_teams);
+            ListService.ClearList(_seasons);
             NumberOfSeasonsTextBox.Text = "";
             SeasonsConfigurationButton.IsEnabled = false;
             _numberOfSeasonsEntered = false;
