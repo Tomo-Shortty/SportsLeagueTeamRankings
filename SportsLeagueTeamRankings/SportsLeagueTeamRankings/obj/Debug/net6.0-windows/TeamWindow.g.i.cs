@@ -85,7 +85,7 @@ namespace SportsLeagueTeamRankings {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SportsLeagueTeamRankings;V1.0.0.0;component/teamwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SportsLeagueTeamRankings;component/teamwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TeamWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

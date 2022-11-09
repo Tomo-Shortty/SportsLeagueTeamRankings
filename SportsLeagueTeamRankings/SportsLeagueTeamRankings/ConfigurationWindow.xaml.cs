@@ -98,20 +98,18 @@ namespace SportsLeagueTeamRankings
 
         private void IncludeSecondaryPlayOffRankCheckbox_Checked(object sender, RoutedEventArgs e)
         {
-            /*if (IncludeSecondaryPlayOffRankCheckbox.IsChecked == false)
-            {
-                SecondaryPlayOffRankTextBox.Text = "";
-                SecondaryPlayOffRankTextBox.IsEnabled = false;
-            }
-            else if (IncludeSecondaryPlayOffRankCheckbox.IsChecked == true)
-            {
-                SecondaryPlayOffRankTextBox.IsEnabled = true;
-            }*/
+            SecondaryPlayOffRankTextBox.IsEnabled = true;
+        }
+
+        private void IncludeSecondaryPlayOffRankCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            SecondaryPlayOffRankTextBox.Text = "";
+            SecondaryPlayOffRankTextBox.IsEnabled = false;
         }
 
         private void SubmitConfigurationButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void ResetConfigurationButton_Click(object sender, RoutedEventArgs e)

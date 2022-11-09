@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsLeagueTeamRankings.Enums
 {
-    internal enum ScoreType
+    public enum ScoreType
     {
         Excellent,
         Good,

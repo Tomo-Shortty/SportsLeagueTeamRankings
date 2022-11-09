@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsLeagueTeamRankings.Models
 {
-    internal class Team
+    public class Team
     {
         public string Name { get; set; }
         public League League { get; set; }

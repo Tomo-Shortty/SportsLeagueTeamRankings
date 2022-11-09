@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsLeagueTeamRankings.Services
 {
-    internal class TeamService
+    public class TeamService
     {
     }
 }

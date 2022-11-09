@@ -53,7 +53,8 @@
         <Label Content="Bad Score:" HorizontalAlignment="Left" Margin="10,227,0,0" Grid.Row="5" VerticalAlignment="Top"/>
         <Label Grid.Column="1" Content="Terrible Score:" HorizontalAlignment="Left" Margin="10,227,0,0" Grid.Row="5" VerticalAlignment="Top"/>
         <CheckBox x:Name="TakeAverageScoreForMissingYearsCheckbox" Content="" HorizontalAlignment="Left" Margin="225,171,0,0" Grid.Row="5" VerticalAlignment="Top"/>
-        <CheckBox x:Name="IncludeSecondaryPlayOffRankCheckbox" Content="" HorizontalAlignment="Left" Margin="225,139,0,0" Grid.Row="5" VerticalAlignment="Top" IsChecked="True" Checked="IncludeSecondaryPlayOffRankCheckbox_Checked"/>
+        <TextBox x:Name="SecondaryPlayOffRankTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,137,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="4"/>
+        <CheckBox x:Name="IncludeSecondaryPlayOffRankCheckbox" Content="" HorizontalAlignment="Left" Margin="225,139,0,0" Grid.Row="5" VerticalAlignment="Top" IsChecked="True" Checked="IncludeSecondaryPlayOffRankCheckbox_Checked" Unchecked="IncludeSecondaryPlayOffRankCheckbox_Unchecked"/>
         <TextBox x:Name="BackToBackPremiershipWinTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,45,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="10"/>
         <TextBox x:Name="PlayOffWinTextBox" HorizontalAlignment="Left" Margin="189,14,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="5"/>
         <TextBox x:Name="PremiershipTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,14,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="10"/>
@@ -62,7 +63,6 @@
         <TextBox x:Name="GrandFinalAppearanceTextBox" HorizontalAlignment="Left" Margin="189,76,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="5"/>
         <TextBox x:Name="PlayOffRankTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,107,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="8"/>
         <TextBox x:Name="PointsDifferenceDivisionTextBox" HorizontalAlignment="Left" Margin="189,107,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="10"/>
-        <TextBox x:Name="SecondaryPlayOffRankTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,137,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="4"/>
         <TextBox x:Name="ExcellentScoreTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,169,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="400"/>
         <TextBox x:Name="AverageScoreTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="189,200,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="200"/>
         <TextBox x:Name="GoodScoreTextBox" HorizontalAlignment="Left" Margin="189,200,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="300"/>
