@@ -66,15 +66,13 @@ namespace SportsLeagueTeamRankings
         {
             if (LeagueSetupCompetitionTypeSelector.SelectedIndex == 2)
             {
-                TeamsPerDivisionLabel.Visibility = Visibility.Visible;
-                TeamsPerDivisionTextBox.Visibility = Visibility.Visible;
-                TeamsPerDivisionTextBox.IsEnabled = true;
+                NumberOfDivisionsLabel.Visibility = Visibility.Visible;
+                NumberOfDivisionsTextBox.Visibility = Visibility.Visible;
             }
             else
             {
-                TeamsPerDivisionLabel.Visibility = Visibility.Collapsed;
-                TeamsPerDivisionTextBox.Visibility = Visibility.Collapsed;
-                TeamsPerDivisionTextBox.IsEnabled = false;
+                NumberOfDivisionsLabel.Visibility = Visibility.Collapsed;
+                NumberOfDivisionsTextBox.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -123,6 +121,8 @@ namespace SportsLeagueTeamRankings
         private void SeasonsConfigurationButton_Click(object sender, RoutedEventArgs e)
         {
             SeasonWindow seasonWindow = new SeasonWindow();
+            seasonWindow.Title = LeagueNameTextBox.Text.Trim() + " Seasons";
+            seasonWindow.SetNumberOfRows(int.Parse(NumberOfSeasonsTextBox.Text.Trim()));
             seasonWindow.Show();
         }
 
@@ -138,7 +138,22 @@ namespace SportsLeagueTeamRankings
 
         private void SubmitConfigurationButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                var submitConfiguration = ConfigurationService.ProcessConfiguration(LeagueNameTextBox.Text, ConfigurationService.ConvertSelectedCompetitionTypeToEnum(LeagueSetupCompetitionTypeSelector.Text), NumberOfTeamsTextBox.Text, _teams, NumberOfDivisionsTextBox.Text,
+                NumberOfSeasonsTextBox.Text, _seasons, ConfigurationNameTextBox.Text, PlayOffWinTextBox.Text, PreliminaryFinalAppearanceTextBox.Text, GrandFinalAppearanceTextBox.Text, PremiershipTextBox.Text,
+                BackToBackPremiershipWinTextBox.Text, WoodenSpoonTextBox.Text, PointsDifferenceDivisionTextBox.Text, PlayOffRankTextBox.Text, IncludeSecondaryPlayOffRankCheckbox.IsChecked, SecondaryPlayOffRankTextBox.Text,
+                TakeAverageScoreForMissingYearsCheckbox.IsChecked, ExcellentScoreTextBox.Text, GoodScoreTextBox.Text, AverageScoreTextBox.Text, BadScoreTextBox.Text, TerribleScoreTextBox.Text);
+
+                if (submitConfiguration)
+                {
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void ResetConfigurationButton_Click(object sender, RoutedEventArgs e)
@@ -153,17 +168,18 @@ namespace SportsLeagueTeamRankings
 
         private void Reset()
         {
-            LeagueNameTextBox.Text = "";
+            LeagueNameTextBox.Text = string.Empty;
             LeagueSetupCompetitionTypeSelector.SelectedIndex = 0;
-            TeamsPerDivisionTextBox.Text = "";
-            NumberOfTeamsTextBox.Text = "";
+            NumberOfTeamsTextBox.Text = string.Empty;
             TeamsConfigurationButton.IsEnabled = false;
+            TeamsListTextBox.Text = string.Empty;
             _leagueNameEntered = false;
             _numberOfTeamsEntered = false;
             ListService.ClearList(_teams);
             ListService.ClearList(_seasons);
             NumberOfSeasonsTextBox.Text = "";
             SeasonsConfigurationButton.IsEnabled = false;
+            SeasonsListTextBox.Text = string.Empty;
             _numberOfSeasonsEntered = false;
             PlayOffWinTextBox.Text = "5";
             PreliminaryFinalAppearanceTextBox.Text = "5";
@@ -182,6 +198,7 @@ namespace SportsLeagueTeamRankings
             AverageScoreTextBox.Text = "200";
             BadScoreTextBox.Text = "100";
             TerribleScoreTextBox.Text = "0";
+            ConfigurationNameTextBox.Text = string.Empty;
         }
     }
 }

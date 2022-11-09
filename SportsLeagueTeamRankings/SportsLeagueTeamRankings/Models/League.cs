@@ -12,5 +12,6 @@ namespace SportsLeagueTeamRankings.Models
         public string Name { get; set; }
         public CompetitionType CompetitionType { get; set; }
         public int NumberOfTeams { get; set; }
+        public int NumberOfDivisions { get; set; }
     }
 }

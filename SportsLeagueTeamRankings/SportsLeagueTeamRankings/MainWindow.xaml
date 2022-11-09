@@ -21,22 +21,28 @@
                 <RowDefinition Height="1.5*"/>
                 <RowDefinition Height="8.5*"/>
             </Grid.RowDefinitions>
-            <Label x:Name="LeagueLabel" Content="League Label" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2"/>
-            <Label x:Name="CompetitionTypeInfoLabel" Content="Competition Type:" HorizontalAlignment="Left" Margin="28,94,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
+            <Label x:Name="LeagueLabel" Content="League Label" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="36" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <Label x:Name="CompetitionTypeInfoLabel" Grid.Column="1" Content="Competition Type:" HorizontalAlignment="Left" Margin="0,94,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" VerticalContentAlignment="Center"/>
             <Label x:Name="CompetitionTypeLabel" Grid.Column="1" Content="Competition Type Label" HorizontalAlignment="Left" Margin="176,94,0,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
             <Grid x:Name="StatsGridLayout" Grid.Column="1" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.5*"/>
                     <RowDefinition Height="6*"/>
                 </Grid.RowDefinitions>
-                <Label x:Name="ConfigurationLabel" Content="Configuration Label" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,-2,0" FontSize="24" FontWeight="Bold"/>
+                <Label x:Name="ConfigurationLabel" Content="Configuration Label" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold"/>
                 <Grid x:Name="StatsGrid" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    <Label Content="Team" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                    <Label Content="Points" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" Grid.Column="1"/>
+                    <Label Content="Rank" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="18" Grid.Column="2"/>
+                    <Border x:Name="TeamStandingHeaderBorder" BorderBrush="Black" BorderThickness="0,0,0,1" Grid.ColumnSpan="3"/>
                 </Grid>
             </Grid>
         </Grid>
