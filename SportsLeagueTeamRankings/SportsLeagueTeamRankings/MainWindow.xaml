@@ -45,7 +45,8 @@
                     <Border x:Name="TeamStandingHeaderBorder" BorderBrush="Black" BorderThickness="0,0,0,1" Grid.ColumnSpan="3"/>
                 </Grid>
             </Grid>
+            <Button x:Name="CalculateTeamStandingButton" Grid.Column="1" Content="Begin Calculation" HorizontalAlignment="Left" Margin="734,106,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Width="110" Height="20" Grid.ColumnSpan="2" Click="CalculateTeamStandingButton_Click"/>
         </Grid>
-        <Button x:Name="NewButton" Content="New" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" HorizontalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Right" Margin="0,0,10,0" Height="20" Width="60" Click="NewButton_Click"/>
+        <Button x:Name="NewConfigurationButton" Content="New Configuration" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" HorizontalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Right" Margin="0,0,10,0" Height="20" Click="NewConfigurationButton_Click" Width="110"/>
     </Grid>
 </Window>

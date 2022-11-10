@@ -42,5 +42,18 @@ namespace SportsLeagueTeamRankings.Services
 
             return result;
         }
+
+        public static void GenerateTeamListBoxItems(List<Team> teams, ListBox listBox)
+        {
+            foreach (var team in teams)
+            {
+                var listBoxItem = new ListBoxItem();
+                listBoxItem.Content = team.Name;
+                listBoxItem.Tag = team;
+                listBox.Items.Add(listBoxItem);
+            }
+
+            listBox.SelectedIndex = 0;
+        }
     }
 }

@@ -215,6 +215,11 @@ namespace SportsLeagueTeamRankings.Services
                             {
                                 MainWindow.Instance.SeasonRankPoints = CreateSeasonRankPointsList(league.NumberOfDivisions, configuration.PlayOffRank, configuration.SecondaryPlayOffRank);
                             }
+                            else if (league.CompetitionType == CompetitionType.Conference)
+                            {
+                                var conferenceSplit = teams.Count / 2;
+                                MainWindow.Instance.SeasonRankPoints = CreateSeasonRankPointsList(conferenceSplit, configuration.PlayOffRank, configuration.SecondaryPlayOffRank);
+                            }
                             else
                             {
                                 MainWindow.Instance.SeasonRankPoints = CreateSeasonRankPointsList(teams.Count, configuration.PlayOffRank, configuration.SecondaryPlayOffRank);

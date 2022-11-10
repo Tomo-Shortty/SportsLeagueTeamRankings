@@ -1,4 +1,6 @@
-﻿using SportsLeagueTeamRankings.Models;
+﻿using SportsLeagueTeamRankings.Constants;
+using SportsLeagueTeamRankings.Models;
+using SportsLeagueTeamRankings.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,10 +52,26 @@ namespace SportsLeagueTeamRankings
         public List<SeasonRankPoints> SeasonRankPoints { get { return _seasonRankPoints; } set { _seasonRankPoints = value; } }
         public List<TeamStanding> TeamStandings { get { return _teamStandings; } set { _teamStandings = value; } }
 
-        private void NewButton_Click(object sender, RoutedEventArgs e)
+        private void NewConfigurationButton_Click(object sender, RoutedEventArgs e)
         {
             ConfigurationWindow configurationWindow = new ConfigurationWindow();
             configurationWindow.Show();
+        }
+
+        private void CalculateTeamStandingButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_league != null && _teams.Count > 0 && _seasons.Count > 0 & _configuration != null)
+            {
+                CalculationWindow calculationWindow = new CalculationWindow();
+                calculationWindow.Title = _configuration.Name + " Calculation";
+                ListService.GenerateTeamListBoxItems(_teams, calculationWindow.TeamListBox);
+                CalculationService.GenerateSeasonTabs(_seasons, calculationWindow.CalculationTabControl);
+                calculationWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show(ErrorMessages.ConfigurationIncomplete);
+            }
         }
 
         public void CreateTeamStandingsTable(int numberOfRows, List<Team> teams)

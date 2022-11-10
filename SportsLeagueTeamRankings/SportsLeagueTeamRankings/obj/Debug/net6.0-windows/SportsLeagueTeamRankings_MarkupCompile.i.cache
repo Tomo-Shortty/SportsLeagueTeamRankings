@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Development\SportsLeagueTeamRankings\SportsLeagueTeamRankings\SportsLeagueTeamRankings\App.xaml
-4445675775
+5-1171435554
 
-20227807236
+231526840255
 194-2004305220
-ConfigurationWindow.xaml;MainWindow.xaml;SeasonWindow.xaml;TeamWindow.xaml;
+CalculationWindow.xaml;ConfigurationWindow.xaml;MainWindow.xaml;SeasonWindow.xaml;TeamWindow.xaml;
 
 True
 
